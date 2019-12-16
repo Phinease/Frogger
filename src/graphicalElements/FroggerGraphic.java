@@ -67,7 +67,8 @@ public class FroggerGraphic extends JPanel implements IFroggerGraphics, KeyListe
 		frame.setVisible(true);
 		frame.addKeyListener(this);
 		while (start) {
-
+			// Wait till enter
+			start = true;
 		}
 		frame.getContentPane().remove(label);
 		frame.getContentPane().add(this);
@@ -188,7 +189,7 @@ public class FroggerGraphic extends JPanel implements IFroggerGraphics, KeyListe
 				case KeyEvent.VK_RIGHT:
 					frog.move(Direction.right);
 					break;
-				case KeyEvent.VK_ENTER:
+				default:
 					start = false;
 					return;
 			}
